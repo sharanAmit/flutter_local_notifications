@@ -1,0 +1,45 @@
+name: flutter_local_notifications_example
+description: Demonstrates how to use the flutter_local_notifications plugin.
+publish_to: none
+
+dependencies:
+  cupertino_icons: ^1.0.6
+  device_info_plus: 
+    git: https://github.com/kumsumit/device_info_plus.git
+  flutter:
+    sdk: flutter
+  flutter_local_notifications:
+    path: ../
+  flutter_timezone: ^1.0.7
+  http: ^1.1.0
+  image: 
+    git: https://github.com/kumsumit/image.git
+  path_provider:
+    git: https://github.com/kumsumit/path_provider.git
+
+
+dev_dependencies:
+  flutter_driver:
+    sdk: flutter
+  flutter_test:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
+
+# The following overrides exist to ensure the example app builds with the latest code
+# of these packages as part of CI
+dependency_overrides:
+  flutter_local_notifications_linux:
+    path: ../../flutter_local_notifications_linux
+  flutter_local_notifications_platform_interface:
+    path: ../../flutter_local_notifications_platform_interface
+
+flutter:
+  uses-material-design: true
+  assets:
+    - icons/
+    - sound/
+
+environment:
+  sdk: ">=3.1.0 <4.0.0"
+  flutter: ">=3.13.0"
