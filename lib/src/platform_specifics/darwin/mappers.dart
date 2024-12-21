@@ -1,5 +1,3 @@
-import 'package:flutter/foundation.dart';
-
 import 'initialization_settings.dart';
 import 'notification_action.dart';
 import 'notification_attachment.dart';
@@ -13,9 +11,9 @@ extension DarwinNotificationActionMapper on DarwinNotificationAction {
         'identifier': identifier,
         'title': title,
         'options': options
-            .map((e) => 1 << e.index) // ignore: always_specify_types
+            .map((e) => e.value) // ignore: always_specify_types
             .toList(),
-        'type': describeEnum(type),
+        'type': type.name,
         if (buttonTitle != null) 'buttonTitle': buttonTitle!,
         if (placeholder != null) 'placeholder': placeholder!,
       };
@@ -28,7 +26,7 @@ extension DarwinNotificationCategoryMapper on DarwinNotificationCategory {
             .map((e) => e.toMap()) // ignore: always_specify_types
             .toList(),
         'options': options
-            .map((e) => 1 << e.index) // ignore: always_specify_types
+            .map((e) => e.value) // ignore: always_specify_types
             .toList(),
       };
 }

@@ -3,7 +3,7 @@ description: Demonstrates how to use the flutter_local_notifications plugin.
 publish_to: none
 
 dependencies:
-  cupertino_icons: ^1.0.6
+  cupertino_icons: ^1.0.8
   device_info_plus: 
     git: https://github.com/kumsumit/device_info_plus.git
   flutter:
@@ -17,6 +17,7 @@ dependencies:
     git: https://github.com/kumsumit/image.git
   path_provider:
     git: https://github.com/kumsumit/path_provider.git
+  timezone: ^0.10.0  
 
 
 dev_dependencies:
@@ -26,14 +27,7 @@ dev_dependencies:
     sdk: flutter
   integration_test:
     sdk: flutter
-
-# The following overrides exist to ensure the example app builds with the latest code
-# of these packages as part of CI
-dependency_overrides:
-  flutter_local_notifications_linux:
-    path: ../../flutter_local_notifications_linux
-  flutter_local_notifications_platform_interface:
-    path: ../../flutter_local_notifications_platform_interface
+  msix: ^2.7.3
 
 flutter:
   uses-material-design: true
@@ -44,3 +38,15 @@ flutter:
 environment:
   sdk: ">=3.1.0 <4.0.0"
   flutter: ">=3.13.0"
+  
+msix_config:
+  display_name: Flutter Local Notifications Example
+  identity_name: Com.Example.FlutterLocalNotificationsExample
+  msix_version: 1.0.0.0
+  store: false
+  install_certificate: false
+  output_name: example
+  toast_activator:
+    clsid: "d49b0314-ee7a-4626-bf79-97cdb8a991bb"
+    arguments: "msix-args"
+    display_name: "Flutter Local Notifications"

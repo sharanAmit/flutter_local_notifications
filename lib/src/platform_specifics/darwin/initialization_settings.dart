@@ -1,4 +1,3 @@
-import '../../typedefs.dart';
 import 'notification_category.dart';
 
 /// Plugin initialization settings for Darwin-based operating systems
@@ -16,7 +15,6 @@ class DarwinInitializationSettings {
     this.defaultPresentBadge = true,
     this.defaultPresentBanner = true,
     this.defaultPresentList = true,
-    this.onDidReceiveLocalNotification,
     this.notificationCategories = const <DarwinNotificationCategory>[],
   });
 
@@ -76,6 +74,16 @@ class DarwinInitializationSettings {
   ///
   /// Default value is true.
   ///
+  /// If this is set to false to indicate that the notification shouldn't play
+  /// a sound in the foreground then note that for consistency, the notification
+  /// won't play a sound when the app is in the background. If the intention in
+  /// this scenario is to have the app also play the default notification sound
+  /// whilst the app is in the background as well, then the
+  /// [DarwinNotificationDetails.sound] should be set to an arbitrary value
+  /// (e.g. empty string) that doesn't match a custom sound file. This way the
+  /// platform fails to find a custom sound file to fallback to the default
+  /// notification sound.
+  ///
   /// On iOS, this property is only applicable to iOS 10 or newer.
   /// On macOS, this property is only applicable to macOS 10.14 or newer.
   final bool defaultPresentSound;
@@ -114,12 +122,6 @@ class DarwinInitializationSettings {
   /// On iOS, this property is only applicable to iOS 14 or newer.
   /// On macOS, this property is only applicable to macOS 11 or newer.
   final bool defaultPresentList;
-
-  /// Callback for handling when a notification is triggered while the app is
-  /// in the foreground.
-  ///
-  /// This property is only applicable to iOS versions older than 10.
-  final DidReceiveLocalNotificationCallback? onDidReceiveLocalNotification;
 
   /// Configure the notification categories ([DarwinNotificationCategory])
   /// available. This allows for fine-tuning of preview display.

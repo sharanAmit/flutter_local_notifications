@@ -181,19 +181,28 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: d2438d281389a1c6519a75ff85f6548922bf930c
+      resolved-ref: "4341b29b5822f1a29c591e30d7078c1c4d543e84"
       url: "https://github.com/kumsumit/flutter_local_notifications_linux.git"
     source: git
-    version: "4.0.0+1"
+    version: "5.0.1-dev.1"
   flutter_local_notifications_platform_interface:
     dependency: "direct main"
     description:
       path: "."
       ref: HEAD
-      resolved-ref: a150e4863c6b23346434f791b2b79b335110081d
+      resolved-ref: "63e3145aa658c8b18ca53ec0079d99b86a59fbf4"
       url: "https://github.com/kumsumit/flutter_local_notifications_platform_interface.git"
     source: git
-    version: "7.0.0+1"
+    version: "8.1.0-dev.1"
+  flutter_local_notifications_windows:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: "3267f0d62276ff06fec40462a873edf3214790ed"
+      url: "https://github.com/kumsumit/flutter_local_notifications_windows.git"
+    source: git
+    version: "1.0.0-dev.2"
   flutter_test:
     dependency: "direct dev"
     description: flutter
